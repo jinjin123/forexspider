@@ -1,0 +1,532 @@
+
+[2019-11-08 18:35:35,555] [    INFO] - Installing ernie module
+[2019-11-08 18:35:35,586] [    INFO] - Module ernie already installed in /root/.paddlehub/modules/ernie
+[2019-11-08 18:35:36,438] [    INFO] - Set maximum sequence length of input tensor to 128
+[2019-11-08 18:35:36,438] [ WARNING] - ernie-stable has no task_id, the arguement use_taskid of Reader class must be False.
+[2019-11-08 18:35:36,438] [    INFO] - The shape of input tensor[input_ids] set to [-1, 128, 1]
+[2019-11-08 18:35:36,438] [    INFO] - The shape of input tensor[position_ids] set to [-1, 128, 1]
+[2019-11-08 18:35:36,438] [    INFO] - The shape of input tensor[segment_ids] set to [-1, 128, 1]
+[2019-11-08 18:35:36,439] [    INFO] - The shape of input tensor[input_mask] set to [-1, 128, 1]
+[2019-11-08 18:35:36,439] [    INFO] - 199 pretrained paramaters loaded by PaddleHub
+[2019-11-08 18:35:36,557] [    INFO] - Dataset label map = {'1': 1, '0': 0}
+[2019-11-08 18:35:36,557] [    INFO] - Checkpoint dir: ./module_in
+/usr/local/lib/python2.7/dist-packages/celery/platforms.py:812: RuntimeWarning: You are running the worker with superuser privileges, which is
+absolutely not recommended!
+
+Please specify a different user using the -u option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  uid=uid, euid=euid, gid=gid, egid=egid,
+[2019-11-08 18:35:36,694: WARNING/MainProcess] /usr/local/lib/python2.7/dist-packages/celery/apps/worker.py:161: CDeprecationWarning: 
+Starting from version 3.2 Celery will refuse to accept pickle by default.
+
+The pickle serializer is a security concern as it may give attackers
+the ability to execute any command.  It's important to secure
+your broker from unauthorized access when using pickle, so we think
+that enabling pickle should require a deliberate action and not be
+the default choice.
+
+If you depend on pickle then you should set a setting to disable this
+warning and to be sure that everything will continue working
+when you upgrade to Celery 3.2::
+
+    CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']
+
+You must only enable the serializers that you will actually use.
+
+
+  warnings.warn(CDeprecationWarning(W_PICKLE_DEPRECATED))
+[2019-11-08 18:35:44,221: INFO/MainProcess] Connected to amqp://guest:**@127.0.0.1:5672//
+[2019-11-08 18:35:44,240: INFO/MainProcess] mingle: searching for neighbors
+[2019-11-08 18:35:45,259: INFO/MainProcess] mingle: all alone
+[2019-11-08 18:35:45,281: WARNING/MainProcess] /usr/local/lib/python2.7/dist-packages/djcelery/loaders.py:130: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warn('Using settings.DEBUG leads to a memory leak, never '
+[2019-11-08 18:35:45,282: WARNING/MainProcess] /usr/local/lib/python2.7/dist-packages/celery/fixups/django.py:265: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+[2019-11-08 18:35:45,282: WARNING/MainProcess] celery@jimmy-bigserver ready.
+[2019-11-08 18:35:45,343: INFO/MainProcess] Received task: news.tasks.Analysis[c4cd9d1f-1c2e-4009-bd7f-53efa22299ec]
+[2019-11-08 18:35:45,406] [    INFO] - Load the best model from ./module_in/best_model
+[2019-11-08 18:35:45,406: INFO/Worker-34] Load the best model from ./module_in/best_model
+[2019-11-08 18:35:45,544: WARNING/Worker-34] /usr/local/lib/python2.7/dist-packages/paddle/fluid/executor.py:790: UserWarning: The current program is empty.
+  warnings.warn(error_info)
+[2019-11-08 18:35:45,545] [    INFO] - Try loading checkpoint from ./module_in/ckpt.meta
+[2019-11-08 18:35:45,545] [    INFO] - PaddleHub model checkpoint not found, start from scratch...
+[2019-11-08 18:35:45,546] [    INFO] - PaddleHub predict start
+[2019-11-08 18:35:45,547] [    INFO] - PaddleHub predict finished.
+[2019-11-08 18:35:45,548: INFO/MainProcess] Task news.tasks.Analysis[c4cd9d1f-1c2e-4009-bd7f-53efa22299ec] succeeded in 0.200425235002s: None
+[2019-11-08 18:35:46,112: INFO/MainProcess] Received task: news.tasks.Analysis[fa48973e-963c-4fdf-8062-1ae2cd9b60fb]
+[2019-11-08 18:35:46,113: INFO/MainProcess] Received task: news.tasks.Analysis[d7d07ec4-9a52-4112-9af6-a65715100295]
+[2019-11-08 18:35:46,171] [    INFO] - Load the best model from ./module_in/best_model
+[2019-11-08 18:35:46,171: INFO/Worker-23] Load the best model from ./module_in/best_model
+[2019-11-08 18:35:46,172] [    INFO] - Load the best model from ./module_in/best_model
+[2019-11-08 18:35:46,172: INFO/Worker-1] Load the best model from ./module_in/best_model
+[2019-11-08 18:35:46,311: WARNING/Worker-23] /usr/local/lib/python2.7/dist-packages/paddle/fluid/executor.py:790: UserWarning: The current program is empty.
+  warnings.warn(error_info)
+[2019-11-08 18:35:46,312: WARNING/Worker-1] /usr/local/lib/python2.7/dist-packages/paddle/fluid/executor.py:790: UserWarning: The current program is empty.
+  warnings.warn(error_info)
+[2019-11-08 18:35:46,312] [    INFO] - Try loading checkpoint from ./module_in/ckpt.meta
+[2019-11-08 18:35:46,312] [    INFO] - PaddleHub model checkpoint not found, start from scratch...
+[2019-11-08 18:35:46,313] [    INFO] - Try loading checkpoint from ./module_in/ckpt.meta
+[2019-11-08 18:35:46,313] [    INFO] - PaddleHub model checkpoint not found, start from scratch...
+[2019-11-08 18:35:46,314] [    INFO] - PaddleHub predict start
+[2019-11-08 18:35:46,314] [    INFO] - PaddleHub predict finished.
+[2019-11-08 18:35:46,314] [    INFO] - PaddleHub predict start
+[2019-11-08 18:35:46,315: INFO/MainProcess] Task news.tasks.Analysis[fa48973e-963c-4fdf-8062-1ae2cd9b60fb] succeeded in 0.200731353005s: None
+[2019-11-08 18:35:46,318] [    INFO] - PaddleHub predict finished.
+[2019-11-08 18:35:46,319: INFO/MainProcess] Task news.tasks.Analysis[d7d07ec4-9a52-4112-9af6-a65715100295] succeeded in 0.203921717999s: None
+[2019-11-08 18:35:51,115: INFO/MainProcess] Received task: news.tasks.Analysis[5fb57e0d-640e-450c-b72e-e5a0f1d754f7]
+[2019-11-08 18:35:51,173] [    INFO] - Load the best model from ./module_in/best_model
+[2019-11-08 18:35:51,173: INFO/Worker-20] Load the best model from ./module_in/best_model
+[2019-11-08 18:35:51,311: WARNING/Worker-20] /usr/local/lib/python2.7/dist-packages/paddle/fluid/executor.py:790: UserWarning: The current program is empty.
+  warnings.warn(error_info)
+[2019-11-08 18:35:51,312] [    INFO] - Try loading checkpoint from ./module_in/ckpt.meta
+[2019-11-08 18:35:51,312] [    INFO] - PaddleHub model checkpoint not found, start from scratch...
+[2019-11-08 18:35:51,314] [    INFO] - PaddleHub predict start
+[2019-11-08 18:35:51,314] [    INFO] - PaddleHub predict finished.
+[2019-11-08 18:35:51,315: INFO/MainProcess] Task news.tasks.Analysis[5fb57e0d-640e-450c-b72e-e5a0f1d754f7] succeeded in 0.198745656002s: None
+[2019-11-08 19:46:08,353] [    INFO] - Installing ernie module
+[2019-11-08 19:46:08,380] [    INFO] - Module ernie already installed in /root/.paddlehub/modules/ernie
+[2019-11-08 19:46:09,135] [    INFO] - Set maximum sequence length of input tensor to 128
+[2019-11-08 19:46:09,135] [ WARNING] - ernie-stable has no task_id, the arguement use_taskid of Reader class must be False.
+[2019-11-08 19:46:09,135] [    INFO] - The shape of input tensor[input_ids] set to [-1, 128, 1]
+[2019-11-08 19:46:09,135] [    INFO] - The shape of input tensor[position_ids] set to [-1, 128, 1]
+[2019-11-08 19:46:09,135] [    INFO] - The shape of input tensor[segment_ids] set to [-1, 128, 1]
+[2019-11-08 19:46:09,136] [    INFO] - The shape of input tensor[input_mask] set to [-1, 128, 1]
+[2019-11-08 19:46:09,136] [    INFO] - 199 pretrained paramaters loaded by PaddleHub
+[2019-11-08 19:46:09,244] [    INFO] - Dataset label map = {'1': 1, '0': 0}
+[2019-11-08 19:46:09,244] [    INFO] - Checkpoint dir: /root/dataset/module_in
+/usr/local/lib/python2.7/dist-packages/celery/platforms.py:812: RuntimeWarning: You are running the worker with superuser privileges, which is
+absolutely not recommended!
+
+Please specify a different user using the -u option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  uid=uid, euid=euid, gid=gid, egid=egid,
+[2019-11-08 19:46:09,392: WARNING/MainProcess] /usr/local/lib/python2.7/dist-packages/celery/apps/worker.py:161: CDeprecationWarning: 
+Starting from version 3.2 Celery will refuse to accept pickle by default.
+
+The pickle serializer is a security concern as it may give attackers
+the ability to execute any command.  It's important to secure
+your broker from unauthorized access when using pickle, so we think
+that enabling pickle should require a deliberate action and not be
+the default choice.
+
+If you depend on pickle then you should set a setting to disable this
+warning and to be sure that everything will continue working
+when you upgrade to Celery 3.2::
+
+    CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']
+
+You must only enable the serializers that you will actually use.
+
+
+  warnings.warn(CDeprecationWarning(W_PICKLE_DEPRECATED))
+[2019-11-08 19:46:17,412: INFO/MainProcess] Connected to amqp://guest:**@127.0.0.1:5672//
+[2019-11-08 19:46:17,431: INFO/MainProcess] mingle: searching for neighbors
+[2019-11-08 19:46:18,448: INFO/MainProcess] mingle: all alone
+[2019-11-08 19:46:18,480: WARNING/MainProcess] /usr/local/lib/python2.7/dist-packages/djcelery/loaders.py:130: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warn('Using settings.DEBUG leads to a memory leak, never '
+[2019-11-08 19:46:18,480: WARNING/MainProcess] /usr/local/lib/python2.7/dist-packages/celery/fixups/django.py:265: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+[2019-11-08 19:46:18,480: WARNING/MainProcess] celery@jimmy-bigserver ready.
+[2019-11-08 19:46:18,519: INFO/MainProcess] Received task: news.tasks.Analysis[e54ce036-f8f7-4e0a-9d5b-9a54fe7805de]
+[2019-11-08 19:46:18,582] [    INFO] - Load the best model from /root/dataset/module_in/best_model
+[2019-11-08 19:46:18,582: INFO/Worker-37] Load the best model from /root/dataset/module_in/best_model
+[2019-11-08 19:46:18,718: WARNING/Worker-37] /usr/local/lib/python2.7/dist-packages/paddle/fluid/executor.py:790: UserWarning: The current program is empty.
+  warnings.warn(error_info)
+[2019-11-08 19:46:18,815: INFO/MainProcess] Received task: news.tasks.Analysis[3487873a-0045-4014-bd80-8d31a1942ea4]
+[2019-11-08 19:46:19,825] [    INFO] - PaddleHub predict start
+[2019-11-08 19:46:20,519] [    INFO] - Load the best model from /root/dataset/module_in/best_model
+[2019-11-08 19:46:20,519: INFO/Worker-34] Load the best model from /root/dataset/module_in/best_model
+[2019-11-08 19:46:20,651: WARNING/Worker-34] /usr/local/lib/python2.7/dist-packages/paddle/fluid/executor.py:790: UserWarning: The current program is empty.
+  warnings.warn(error_info)
+[2019-11-08 19:46:21,772] [    INFO] - PaddleHub predict start
+[2019-11-08 19:46:22,062] [    INFO] - PaddleHub predict finished.
+[2019-11-08 19:46:22,141: INFO/MainProcess] Task news.tasks.Analysis[e54ce036-f8f7-4e0a-9d5b-9a54fe7805de] succeeded in 3.617466394s: None
+[2019-11-08 19:46:23,817: INFO/MainProcess] Received task: news.tasks.Analysis[44b6b300-20a8-4bf9-a59c-d192009753d8]
+[2019-11-08 19:46:23,875] [    INFO] - Load the best model from /root/dataset/module_in/best_model
+[2019-11-08 19:46:23,875: INFO/Worker-33] Load the best model from /root/dataset/module_in/best_model
+[2019-11-08 19:46:23,891] [    INFO] - PaddleHub predict finished.
+[2019-11-08 19:46:23,967: INFO/MainProcess] Task news.tasks.Analysis[3487873a-0045-4014-bd80-8d31a1942ea4] succeeded in 3.504460697s: None
+[2019-11-08 19:46:24,012: WARNING/Worker-33] /usr/local/lib/python2.7/dist-packages/paddle/fluid/executor.py:790: UserWarning: The current program is empty.
+  warnings.warn(error_info)
+[2019-11-08 19:46:25,136] [    INFO] - PaddleHub predict start
+[2019-11-08 19:46:25,137] [    INFO] - PaddleHub predict finished.
+[2019-11-08 19:46:25,138: INFO/MainProcess] Task news.tasks.Analysis[44b6b300-20a8-4bf9-a59c-d192009753d8] succeeded in 1.31986699s: None
+[2019-11-08 19:46:28,819: INFO/MainProcess] Received task: news.tasks.Analysis[eb34cac5-6cb0-48f0-aef7-e13d05b2b007]
+[2019-11-08 19:46:28,879] [    INFO] - Load the best model from /root/dataset/module_in/best_model
+[2019-11-08 19:46:28,879: INFO/Worker-20] Load the best model from /root/dataset/module_in/best_model
+[2019-11-08 19:46:29,014: WARNING/Worker-20] /usr/local/lib/python2.7/dist-packages/paddle/fluid/executor.py:790: UserWarning: The current program is empty.
+  warnings.warn(error_info)
+[2019-11-08 19:46:30,117] [    INFO] - PaddleHub predict start
+[2019-11-08 19:46:30,117] [    INFO] - PaddleHub predict finished.
+[2019-11-08 19:46:30,120: INFO/MainProcess] Task news.tasks.Analysis[eb34cac5-6cb0-48f0-aef7-e13d05b2b007] succeeded in 1.29932574s: None
+[2019-11-08 19:46:33,822: INFO/MainProcess] Received task: news.tasks.Analysis[e0584fea-06d9-43b4-893d-e8bd176586f4]
+[2019-11-08 19:46:33,895] [    INFO] - Load the best model from /root/dataset/module_in/best_model
+[2019-11-08 19:46:33,895: INFO/Worker-41] Load the best model from /root/dataset/module_in/best_model
+[2019-11-08 19:46:34,076: WARNING/Worker-41] /usr/local/lib/python2.7/dist-packages/paddle/fluid/executor.py:790: UserWarning: The current program is empty.
+  warnings.warn(error_info)
+[2019-11-08 19:46:38,305] [    INFO] - PaddleHub predict start
+[2019-11-08 19:46:38,309] [    INFO] - PaddleHub predict finished.
+[2019-11-08 19:46:38,313: INFO/MainProcess] Task news.tasks.Analysis[e0584fea-06d9-43b4-893d-e8bd176586f4] succeeded in 4.489398101s: None
+[2019-11-08 19:46:38,824: INFO/MainProcess] Received task: news.tasks.Analysis[7b0d76e3-cba9-44d8-8001-289abc71ae5c]
+[2019-11-08 19:46:38,887] [    INFO] - Load the best model from /root/dataset/module_in/best_model
+[2019-11-08 19:46:38,887: INFO/Worker-48] Load the best model from /root/dataset/module_in/best_model
+[2019-11-08 19:46:39,023: WARNING/Worker-48] /usr/local/lib/python2.7/dist-packages/paddle/fluid/executor.py:790: UserWarning: The current program is empty.
+  warnings.warn(error_info)
+[2019-11-08 19:46:40,124] [    INFO] - PaddleHub predict start
+[2019-11-08 19:46:40,125] [    INFO] - PaddleHub predict finished.
+[2019-11-08 19:46:40,126: INFO/MainProcess] Task news.tasks.Analysis[7b0d76e3-cba9-44d8-8001-289abc71ae5c] succeeded in 1.300401518s: None
+[2019-11-08 19:46:43,827: INFO/MainProcess] Received task: news.tasks.Analysis[d238dadc-35f3-4c9c-9672-1f1170becdd4]
+[2019-11-08 19:46:43,886] [    INFO] - Load the best model from /root/dataset/module_in/best_model
+[2019-11-08 19:46:43,886: INFO/Worker-47] Load the best model from /root/dataset/module_in/best_model
+[2019-11-08 19:46:44,023: WARNING/Worker-47] /usr/local/lib/python2.7/dist-packages/paddle/fluid/executor.py:790: UserWarning: The current program is empty.
+  warnings.warn(error_info)
+[2019-11-08 19:46:45,161] [    INFO] - PaddleHub predict start
+[2019-11-08 19:46:45,162] [    INFO] - PaddleHub predict finished.
+[2019-11-08 19:46:45,163: INFO/MainProcess] Task news.tasks.Analysis[d238dadc-35f3-4c9c-9672-1f1170becdd4] succeeded in 1.33468288s: None
+[2019-11-08 19:46:48,829: INFO/MainProcess] Received task: news.tasks.Analysis[2de44d80-2a14-4098-abb7-f960d86f4df0]
+[2019-11-08 19:46:48,889] [    INFO] - Load the best model from /root/dataset/module_in/best_model
+[2019-11-08 19:46:48,889: INFO/Worker-2] Load the best model from /root/dataset/module_in/best_model
+[2019-11-08 19:46:49,024: WARNING/Worker-2] /usr/local/lib/python2.7/dist-packages/paddle/fluid/executor.py:790: UserWarning: The current program is empty.
+  warnings.warn(error_info)
+[2019-11-08 19:46:50,122] [    INFO] - PaddleHub predict start
+[2019-11-08 19:46:50,123] [    INFO] - PaddleHub predict finished.
+[2019-11-08 19:46:50,124: INFO/MainProcess] Task news.tasks.Analysis[2de44d80-2a14-4098-abb7-f960d86f4df0] succeeded in 1.293054486s: None
+[2019-11-08 19:50:10,528] [    INFO] - Installing ernie module
+[2019-11-08 19:50:10,554] [    INFO] - Module ernie already installed in /root/.paddlehub/modules/ernie
+[2019-11-08 19:50:11,279] [    INFO] - Set maximum sequence length of input tensor to 128
+[2019-11-08 19:50:11,279] [ WARNING] - ernie-stable has no task_id, the arguement use_taskid of Reader class must be False.
+[2019-11-08 19:50:11,279] [    INFO] - The shape of input tensor[input_ids] set to [-1, 128, 1]
+[2019-11-08 19:50:11,280] [    INFO] - The shape of input tensor[position_ids] set to [-1, 128, 1]
+[2019-11-08 19:50:11,280] [    INFO] - The shape of input tensor[segment_ids] set to [-1, 128, 1]
+[2019-11-08 19:50:11,280] [    INFO] - The shape of input tensor[input_mask] set to [-1, 128, 1]
+[2019-11-08 19:50:11,281] [    INFO] - 199 pretrained paramaters loaded by PaddleHub
+[2019-11-08 19:50:11,383] [    INFO] - Dataset label map = {'1': 1, '0': 0}
+[2019-11-08 19:50:11,383] [    INFO] - Checkpoint dir: /root/dataset/module_in
+/usr/local/lib/python2.7/dist-packages/celery/platforms.py:812: RuntimeWarning: You are running the worker with superuser privileges, which is
+absolutely not recommended!
+
+Please specify a different user using the -u option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  uid=uid, euid=euid, gid=gid, egid=egid,
+[2019-11-08 19:50:11,534: WARNING/MainProcess] /usr/local/lib/python2.7/dist-packages/celery/apps/worker.py:161: CDeprecationWarning: 
+Starting from version 3.2 Celery will refuse to accept pickle by default.
+
+The pickle serializer is a security concern as it may give attackers
+the ability to execute any command.  It's important to secure
+your broker from unauthorized access when using pickle, so we think
+that enabling pickle should require a deliberate action and not be
+the default choice.
+
+If you depend on pickle then you should set a setting to disable this
+warning and to be sure that everything will continue working
+when you upgrade to Celery 3.2::
+
+    CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']
+
+You must only enable the serializers that you will actually use.
+
+
+  warnings.warn(CDeprecationWarning(W_PICKLE_DEPRECATED))
+[2019-11-08 19:50:19,672: INFO/MainProcess] Connected to amqp://guest:**@127.0.0.1:5672//
+[2019-11-08 19:50:19,692: INFO/MainProcess] mingle: searching for neighbors
+[2019-11-08 19:50:20,709: INFO/MainProcess] mingle: all alone
+[2019-11-08 19:50:20,735: WARNING/MainProcess] /usr/local/lib/python2.7/dist-packages/djcelery/loaders.py:130: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warn('Using settings.DEBUG leads to a memory leak, never '
+[2019-11-08 19:50:20,735: WARNING/MainProcess] /usr/local/lib/python2.7/dist-packages/celery/fixups/django.py:265: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+[2019-11-08 19:50:20,735: WARNING/MainProcess] celery@jimmy-bigserver ready.
+[2019-11-08 19:50:20,763: INFO/MainProcess] Received task: news.tasks.Analysis[8dea8bbf-58a4-42a7-a0e5-d87fbee65ac0]
+[2019-11-08 19:50:20,827] [    INFO] - Load the best model from /root/dataset/module_in/best_model
+[2019-11-08 19:50:20,827: INFO/Worker-25] Load the best model from /root/dataset/module_in/best_model
+[2019-11-08 19:50:21,008: INFO/MainProcess] Received task: news.tasks.Analysis[0221be32-1c6d-4a32-85ed-0ff0a3ebcf48]
+[2019-11-08 19:50:21,012: WARNING/Worker-25] /usr/local/lib/python2.7/dist-packages/paddle/fluid/executor.py:790: UserWarning: The current program is empty.
+  warnings.warn(error_info)
+[2019-11-08 19:50:21,073] [    INFO] - Load the best model from /root/dataset/module_in/best_model
+[2019-11-08 19:50:21,073: INFO/Worker-43] Load the best model from /root/dataset/module_in/best_model
+[2019-11-08 19:50:21,249: WARNING/Worker-43] /usr/local/lib/python2.7/dist-packages/paddle/fluid/executor.py:790: UserWarning: The current program is empty.
+  warnings.warn(error_info)
+[2019-11-08 19:50:22,766] [    INFO] - PaddleHub predict start
+[2019-11-08 19:50:22,767] [    INFO] - PaddleHub predict finished.
+[2019-11-08 19:50:22,769: INFO/MainProcess] Task news.tasks.Analysis[8dea8bbf-58a4-42a7-a0e5-d87fbee65ac0] succeeded in 2.00124047s: None
+[2019-11-08 19:50:22,997] [    INFO] - PaddleHub predict start
+[2019-11-08 19:50:22,998] [    INFO] - PaddleHub predict finished.
+[2019-11-08 19:50:23,000: INFO/MainProcess] Task news.tasks.Analysis[0221be32-1c6d-4a32-85ed-0ff0a3ebcf48] succeeded in 1.990630217s: None
+[2019-11-08 19:50:26,011: INFO/MainProcess] Received task: news.tasks.Analysis[610f7fd5-6c6a-4f43-bafc-8f133766600b]
+[2019-11-08 19:50:26,075] [    INFO] - Load the best model from /root/dataset/module_in/best_model
+[2019-11-08 19:50:26,075: INFO/Worker-37] Load the best model from /root/dataset/module_in/best_model
+[2019-11-08 19:50:26,235: WARNING/Worker-37] /usr/local/lib/python2.7/dist-packages/paddle/fluid/executor.py:790: UserWarning: The current program is empty.
+  warnings.warn(error_info)
+[2019-11-08 19:50:27,578] [    INFO] - PaddleHub predict start
+[2019-11-08 19:50:27,579] [    INFO] - PaddleHub predict finished.
+[2019-11-08 19:50:27,580: INFO/MainProcess] Task news.tasks.Analysis[610f7fd5-6c6a-4f43-bafc-8f133766600b] succeeded in 1.56769141799s: None
+/usr/local/lib/python2.7/dist-packages/celery/platforms.py:812: RuntimeWarning: You are running the worker with superuser privileges, which is
+absolutely not recommended!
+
+Please specify a different user using the -u option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  uid=uid, euid=euid, gid=gid, egid=egid,
+[2019-11-08 20:53:36,666: WARNING/MainProcess] /usr/local/lib/python2.7/dist-packages/celery/apps/worker.py:161: CDeprecationWarning: 
+Starting from version 3.2 Celery will refuse to accept pickle by default.
+
+The pickle serializer is a security concern as it may give attackers
+the ability to execute any command.  It's important to secure
+your broker from unauthorized access when using pickle, so we think
+that enabling pickle should require a deliberate action and not be
+the default choice.
+
+If you depend on pickle then you should set a setting to disable this
+warning and to be sure that everything will continue working
+when you upgrade to Celery 3.2::
+
+    CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']
+
+You must only enable the serializers that you will actually use.
+
+
+  warnings.warn(CDeprecationWarning(W_PICKLE_DEPRECATED))
+[2019-11-08 20:53:42,479: INFO/MainProcess] Connected to amqp://guest:**@127.0.0.1:5672//
+[2019-11-08 20:53:42,497: INFO/MainProcess] mingle: searching for neighbors
+[2019-11-08 20:53:43,513: INFO/MainProcess] mingle: all alone
+[2019-11-08 20:53:43,536: WARNING/MainProcess] /usr/local/lib/python2.7/dist-packages/djcelery/loaders.py:130: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warn('Using settings.DEBUG leads to a memory leak, never '
+[2019-11-08 20:53:43,536: WARNING/MainProcess] /usr/local/lib/python2.7/dist-packages/celery/fixups/django.py:265: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+[2019-11-08 20:53:43,537: WARNING/MainProcess] celery@jimmy-bigserver ready.
+[2019-11-08 20:53:43,540: INFO/MainProcess] Received task: news.tasks.Analysis[3b8580f1-d156-4338-b320-f4b49a78be5b]
+[2019-11-08 20:53:43,548: ERROR/MainProcess] Task news.tasks.Analysis[3b8580f1-d156-4338-b320-f4b49a78be5b] raised unexpected: NameError("global name 'AibaseAPi' is not defined",)
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 240, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 438, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/root/forex/NewsStatus/news/tasks.py", line 62, in Analysis
+    ai = AibaseAPi()
+NameError: global name 'AibaseAPi' is not defined
+[2019-11-08 20:53:44,789: INFO/MainProcess] Received task: news.tasks.Analysis[bcc2fbaa-97e6-467c-b245-899d490d6b5c]
+[2019-11-08 20:53:45,540: ERROR/MainProcess] Task news.tasks.Analysis[bcc2fbaa-97e6-467c-b245-899d490d6b5c] raised unexpected: NameError("global name 'AibaseAPi' is not defined",)
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 240, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 438, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/root/forex/NewsStatus/news/tasks.py", line 62, in Analysis
+    ai = AibaseAPi()
+NameError: global name 'AibaseAPi' is not defined
+[2019-11-08 20:53:49,791: INFO/MainProcess] Received task: news.tasks.Analysis[34adbfc8-6e03-4a67-a6b0-56365b64f193]
+[2019-11-08 20:53:49,796: ERROR/MainProcess] Task news.tasks.Analysis[34adbfc8-6e03-4a67-a6b0-56365b64f193] raised unexpected: NameError("global name 'AibaseAPi' is not defined",)
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 240, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/celery/app/trace.py", line 438, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/root/forex/NewsStatus/news/tasks.py", line 62, in Analysis
+    ai = AibaseAPi()
+NameError: global name 'AibaseAPi' is not defined
+/usr/local/lib/python2.7/dist-packages/celery/platforms.py:812: RuntimeWarning: You are running the worker with superuser privileges, which is
+absolutely not recommended!
+
+Please specify a different user using the -u option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  uid=uid, euid=euid, gid=gid, egid=egid,
+[2019-11-08 20:54:39,179: WARNING/MainProcess] /usr/local/lib/python2.7/dist-packages/celery/apps/worker.py:161: CDeprecationWarning: 
+Starting from version 3.2 Celery will refuse to accept pickle by default.
+
+The pickle serializer is a security concern as it may give attackers
+the ability to execute any command.  It's important to secure
+your broker from unauthorized access when using pickle, so we think
+that enabling pickle should require a deliberate action and not be
+the default choice.
+
+If you depend on pickle then you should set a setting to disable this
+warning and to be sure that everything will continue working
+when you upgrade to Celery 3.2::
+
+    CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']
+
+You must only enable the serializers that you will actually use.
+
+
+  warnings.warn(CDeprecationWarning(W_PICKLE_DEPRECATED))
+[2019-11-08 20:54:44,785: INFO/MainProcess] Connected to amqp://guest:**@127.0.0.1:5672//
+[2019-11-08 20:54:44,800: INFO/MainProcess] mingle: searching for neighbors
+[2019-11-08 20:54:45,814: INFO/MainProcess] mingle: all alone
+[2019-11-08 20:54:45,838: WARNING/MainProcess] /usr/local/lib/python2.7/dist-packages/djcelery/loaders.py:130: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warn('Using settings.DEBUG leads to a memory leak, never '
+[2019-11-08 20:54:45,839: WARNING/MainProcess] /usr/local/lib/python2.7/dist-packages/celery/fixups/django.py:265: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+[2019-11-08 20:54:45,839: WARNING/MainProcess] celery@jimmy-bigserver ready.
+[2019-11-08 20:54:45,842: INFO/MainProcess] Received task: news.tasks.Analysis[7f962811-73c9-4fa0-9930-d22fafb6d181]
+[2019-11-08 20:54:46,207] [    INFO] - Installing ernie module
+[2019-11-08 20:54:46,207: INFO/Worker-32] Installing ernie module
+[2019-11-08 20:54:46,234] [    INFO] - Module ernie already installed in /root/.paddlehub/modules/ernie
+[2019-11-08 20:54:46,234: INFO/Worker-32] Module ernie already installed in /root/.paddlehub/modules/ernie
+[2019-11-08 20:54:47,028] [    INFO] - Set maximum sequence length of input tensor to 128
+[2019-11-08 20:54:47,028: INFO/Worker-32] Set maximum sequence length of input tensor to 128
+[2019-11-08 20:54:47,029] [ WARNING] - ernie-stable has no task_id, the arguement use_taskid of Reader class must be False.
+[2019-11-08 20:54:47,029: WARNING/Worker-32] ernie-stable has no task_id, the arguement use_taskid of Reader class must be False.
+[2019-11-08 20:54:47,029] [    INFO] - The shape of input tensor[input_ids] set to [-1, 128, 1]
+[2019-11-08 20:54:47,029: INFO/Worker-32] The shape of input tensor[input_ids] set to [-1, 128, 1]
+[2019-11-08 20:54:47,029] [    INFO] - The shape of input tensor[position_ids] set to [-1, 128, 1]
+[2019-11-08 20:54:47,029: INFO/Worker-32] The shape of input tensor[position_ids] set to [-1, 128, 1]
+[2019-11-08 20:54:47,030] [    INFO] - The shape of input tensor[segment_ids] set to [-1, 128, 1]
+[2019-11-08 20:54:47,030: INFO/Worker-32] The shape of input tensor[segment_ids] set to [-1, 128, 1]
+[2019-11-08 20:54:47,030] [    INFO] - The shape of input tensor[input_mask] set to [-1, 128, 1]
+[2019-11-08 20:54:47,030: INFO/Worker-32] The shape of input tensor[input_mask] set to [-1, 128, 1]
+[2019-11-08 20:54:47,031] [    INFO] - 199 pretrained paramaters loaded by PaddleHub
+[2019-11-08 20:54:47,031: INFO/Worker-32] 199 pretrained paramaters loaded by PaddleHub
+[2019-11-08 20:54:47,142] [    INFO] - Dataset label map = {'1': 1, '0': 0}
+[2019-11-08 20:54:47,142: INFO/Worker-32] Dataset label map = {'1': 1, '0': 0}
+[2019-11-08 20:54:47,142] [    INFO] - Checkpoint dir: /root/dataset/module_in
+[2019-11-08 20:54:47,142: INFO/Worker-32] Checkpoint dir: /root/dataset/module_in
+[2019-11-08 20:54:47,292: INFO/MainProcess] Received task: news.tasks.Analysis[242e4d15-dbc1-43cc-ad53-c9ef10f67e0a]
+[2019-11-08 20:54:47,368] [    INFO] - Load the best model from /root/dataset/module_in/best_model
+[2019-11-08 20:54:47,368: INFO/Worker-32] Load the best model from /root/dataset/module_in/best_model
+[2019-11-08 20:54:47,473: WARNING/Worker-32] /usr/local/lib/python2.7/dist-packages/paddle/fluid/executor.py:790: UserWarning: The current program is empty.
+  warnings.warn(error_info)
+[2019-11-08 20:54:48,219] [    INFO] - Installing ernie module
+[2019-11-08 20:54:48,219: INFO/Worker-24] Installing ernie module
+[2019-11-08 20:54:48,257] [    INFO] - Module ernie already installed in /root/.paddlehub/modules/ernie
+[2019-11-08 20:54:48,257: INFO/Worker-24] Module ernie already installed in /root/.paddlehub/modules/ernie
+[2019-11-08 20:54:48,298] [    INFO] - PaddleHub predict start
+[2019-11-08 20:54:48,299] [    INFO] - PaddleHub predict finished.
+[2019-11-08 20:54:48,309: INFO/MainProcess] Task news.tasks.Analysis[7f962811-73c9-4fa0-9930-d22fafb6d181] succeeded in 2.462744848s: None
+[2019-11-08 20:54:49,095] [    INFO] - Set maximum sequence length of input tensor to 128
+[2019-11-08 20:54:49,095: INFO/Worker-24] Set maximum sequence length of input tensor to 128
+[2019-11-08 20:54:49,095] [ WARNING] - ernie-stable has no task_id, the arguement use_taskid of Reader class must be False.
+[2019-11-08 20:54:49,095: WARNING/Worker-24] ernie-stable has no task_id, the arguement use_taskid of Reader class must be False.
+[2019-11-08 20:54:49,096] [    INFO] - The shape of input tensor[input_ids] set to [-1, 128, 1]
+[2019-11-08 20:54:49,096: INFO/Worker-24] The shape of input tensor[input_ids] set to [-1, 128, 1]
+[2019-11-08 20:54:49,096] [    INFO] - The shape of input tensor[position_ids] set to [-1, 128, 1]
+[2019-11-08 20:54:49,096: INFO/Worker-24] The shape of input tensor[position_ids] set to [-1, 128, 1]
+[2019-11-08 20:54:49,096] [    INFO] - The shape of input tensor[segment_ids] set to [-1, 128, 1]
+[2019-11-08 20:54:49,096: INFO/Worker-24] The shape of input tensor[segment_ids] set to [-1, 128, 1]
+[2019-11-08 20:54:49,096] [    INFO] - The shape of input tensor[input_mask] set to [-1, 128, 1]
+[2019-11-08 20:54:49,096: INFO/Worker-24] The shape of input tensor[input_mask] set to [-1, 128, 1]
+[2019-11-08 20:54:49,097] [    INFO] - 199 pretrained paramaters loaded by PaddleHub
+[2019-11-08 20:54:49,097: INFO/Worker-24] 199 pretrained paramaters loaded by PaddleHub
+[2019-11-08 20:54:49,202] [    INFO] - Dataset label map = {'1': 1, '0': 0}
+[2019-11-08 20:54:49,202: INFO/Worker-24] Dataset label map = {'1': 1, '0': 0}
+[2019-11-08 20:54:49,202] [    INFO] - Checkpoint dir: /root/dataset/module_in
+[2019-11-08 20:54:49,202: INFO/Worker-24] Checkpoint dir: /root/dataset/module_in
+[2019-11-08 20:54:49,691] [    INFO] - Load the best model from /root/dataset/module_in/best_model
+[2019-11-08 20:54:49,691: INFO/Worker-24] Load the best model from /root/dataset/module_in/best_model
+[2019-11-08 20:54:49,788: WARNING/Worker-24] /usr/local/lib/python2.7/dist-packages/paddle/fluid/executor.py:790: UserWarning: The current program is empty.
+  warnings.warn(error_info)
+[2019-11-08 20:54:50,889] [    INFO] - PaddleHub predict start
+[2019-11-08 20:54:50,890] [    INFO] - PaddleHub predict finished.
+[2019-11-08 20:54:50,904: INFO/MainProcess] Task news.tasks.Analysis[242e4d15-dbc1-43cc-ad53-c9ef10f67e0a] succeeded in 3.064676156s: None
+[2019-11-08 20:54:52,294: INFO/MainProcess] Received task: news.tasks.Analysis[2e1bf330-9e7a-4eef-acfc-29717573b270]
+[2019-11-08 20:54:52,656] [    INFO] - Installing ernie module
+[2019-11-08 20:54:52,656: INFO/Worker-14] Installing ernie module
+[2019-11-08 20:54:52,683] [    INFO] - Module ernie already installed in /root/.paddlehub/modules/ernie
+[2019-11-08 20:54:52,683: INFO/Worker-14] Module ernie already installed in /root/.paddlehub/modules/ernie
+[2019-11-08 20:54:53,512] [    INFO] - Set maximum sequence length of input tensor to 128
+[2019-11-08 20:54:53,512: INFO/Worker-14] Set maximum sequence length of input tensor to 128
+[2019-11-08 20:54:53,512] [ WARNING] - ernie-stable has no task_id, the arguement use_taskid of Reader class must be False.
+[2019-11-08 20:54:53,512: WARNING/Worker-14] ernie-stable has no task_id, the arguement use_taskid of Reader class must be False.
+[2019-11-08 20:54:53,512] [    INFO] - The shape of input tensor[input_ids] set to [-1, 128, 1]
+[2019-11-08 20:54:53,512: INFO/Worker-14] The shape of input tensor[input_ids] set to [-1, 128, 1]
+[2019-11-08 20:54:53,513] [    INFO] - The shape of input tensor[position_ids] set to [-1, 128, 1]
+[2019-11-08 20:54:53,513: INFO/Worker-14] The shape of input tensor[position_ids] set to [-1, 128, 1]
+[2019-11-08 20:54:53,513] [    INFO] - The shape of input tensor[segment_ids] set to [-1, 128, 1]
+[2019-11-08 20:54:53,513: INFO/Worker-14] The shape of input tensor[segment_ids] set to [-1, 128, 1]
+[2019-11-08 20:54:53,513] [    INFO] - The shape of input tensor[input_mask] set to [-1, 128, 1]
+[2019-11-08 20:54:53,513: INFO/Worker-14] The shape of input tensor[input_mask] set to [-1, 128, 1]
+[2019-11-08 20:54:53,514] [    INFO] - 199 pretrained paramaters loaded by PaddleHub
+[2019-11-08 20:54:53,514: INFO/Worker-14] 199 pretrained paramaters loaded by PaddleHub
+[2019-11-08 20:54:53,620] [    INFO] - Dataset label map = {'1': 1, '0': 0}
+[2019-11-08 20:54:53,620: INFO/Worker-14] Dataset label map = {'1': 1, '0': 0}
+[2019-11-08 20:54:53,620] [    INFO] - Checkpoint dir: /root/dataset/module_in
+[2019-11-08 20:54:53,620: INFO/Worker-14] Checkpoint dir: /root/dataset/module_in
+[2019-11-08 20:54:53,935] [    INFO] - Load the best model from /root/dataset/module_in/best_model
+[2019-11-08 20:54:53,935: INFO/Worker-14] Load the best model from /root/dataset/module_in/best_model
+[2019-11-08 20:54:54,045: WARNING/Worker-14] /usr/local/lib/python2.7/dist-packages/paddle/fluid/executor.py:790: UserWarning: The current program is empty.
+  warnings.warn(error_info)
+[2019-11-08 20:54:55,058] [    INFO] - PaddleHub predict start
+[2019-11-08 20:54:55,059] [    INFO] - PaddleHub predict finished.
+[2019-11-08 20:54:55,072: INFO/MainProcess] Task news.tasks.Analysis[2e1bf330-9e7a-4eef-acfc-29717573b270] succeeded in 2.776191999s: None
+[2019-11-08 20:54:57,298: INFO/MainProcess] Received task: news.tasks.Analysis[7dfef51c-c6a9-4ffa-943b-dbe4bcbfbd2a]
+[2019-11-08 20:54:57,661] [    INFO] - Installing ernie module
+[2019-11-08 20:54:57,661: INFO/Worker-48] Installing ernie module
+[2019-11-08 20:54:57,691] [    INFO] - Module ernie already installed in /root/.paddlehub/modules/ernie
+[2019-11-08 20:54:57,691: INFO/Worker-48] Module ernie already installed in /root/.paddlehub/modules/ernie
+/usr/local/lib/python2.7/dist-packages/celery/platforms.py:812: RuntimeWarning: You are running the worker with superuser privileges, which is
+absolutely not recommended!
+
+Please specify a different user using the -u option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  uid=uid, euid=euid, gid=gid, egid=egid,
+[2019-11-08 20:56:50,571: WARNING/MainProcess] /usr/local/lib/python2.7/dist-packages/celery/apps/worker.py:161: CDeprecationWarning: 
+Starting from version 3.2 Celery will refuse to accept pickle by default.
+
+The pickle serializer is a security concern as it may give attackers
+the ability to execute any command.  It's important to secure
+your broker from unauthorized access when using pickle, so we think
+that enabling pickle should require a deliberate action and not be
+the default choice.
+
+If you depend on pickle then you should set a setting to disable this
+warning and to be sure that everything will continue working
+when you upgrade to Celery 3.2::
+
+    CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']
+
+You must only enable the serializers that you will actually use.
+
+
+  warnings.warn(CDeprecationWarning(W_PICKLE_DEPRECATED))
+[2019-11-08 20:56:56,605: INFO/MainProcess] Connected to amqp://guest:**@127.0.0.1:5672//
+[2019-11-08 20:56:56,624: INFO/MainProcess] mingle: searching for neighbors
+[2019-11-08 20:56:57,640: INFO/MainProcess] mingle: all alone
+[2019-11-08 20:56:57,663: WARNING/MainProcess] /usr/local/lib/python2.7/dist-packages/djcelery/loaders.py:130: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warn('Using settings.DEBUG leads to a memory leak, never '
+[2019-11-08 20:56:57,664: WARNING/MainProcess] /usr/local/lib/python2.7/dist-packages/celery/fixups/django.py:265: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+[2019-11-08 20:56:57,664: WARNING/MainProcess] celery@jimmy-bigserver ready.
+[2019-11-08 20:56:57,667: INFO/MainProcess] Received task: news.tasks.Analysis[50607c8f-f5c5-4f07-89e9-0b683cc5ddd3]
+[2019-11-08 20:56:58,034] [    INFO] - Installing ernie module
+[2019-11-08 20:56:58,034: INFO/Worker-1] Installing ernie module
+[2019-11-08 20:56:58,061] [    INFO] - Module ernie already installed in /root/.paddlehub/modules/ernie
+[2019-11-08 20:56:58,061: INFO/Worker-1] Module ernie already installed in /root/.paddlehub/modules/ernie
+[2019-11-08 20:56:58,881] [    INFO] - Set maximum sequence length of input tensor to 128
+[2019-11-08 20:56:58,881: INFO/Worker-1] Set maximum sequence length of input tensor to 128
+[2019-11-08 20:56:58,883] [ WARNING] - ernie-stable has no task_id, the arguement use_taskid of Reader class must be False.
+[2019-11-08 20:56:58,883: WARNING/Worker-1] ernie-stable has no task_id, the arguement use_taskid of Reader class must be False.
+[2019-11-08 20:56:58,883] [    INFO] - The shape of input tensor[input_ids] set to [-1, 128, 1]
+[2019-11-08 20:56:58,883: INFO/Worker-1] The shape of input tensor[input_ids] set to [-1, 128, 1]
+[2019-11-08 20:56:58,884] [    INFO] - The shape of input tensor[position_ids] set to [-1, 128, 1]
+[2019-11-08 20:56:58,884: INFO/Worker-1] The shape of input tensor[position_ids] set to [-1, 128, 1]
+[2019-11-08 20:56:58,884] [    INFO] - The shape of input tensor[segment_ids] set to [-1, 128, 1]
+[2019-11-08 20:56:58,884: INFO/Worker-1] The shape of input tensor[segment_ids] set to [-1, 128, 1]
+[2019-11-08 20:56:58,884] [    INFO] - The shape of input tensor[input_mask] set to [-1, 128, 1]
+[2019-11-08 20:56:58,884: INFO/Worker-1] The shape of input tensor[input_mask] set to [-1, 128, 1]
+[2019-11-08 20:56:58,885] [    INFO] - 199 pretrained paramaters loaded by PaddleHub
+[2019-11-08 20:56:58,885: INFO/Worker-1] 199 pretrained paramaters loaded by PaddleHub
+[2019-11-08 20:56:58,997] [    INFO] - Dataset label map = {'1': 1, '0': 0}
+[2019-11-08 20:56:58,997: INFO/Worker-1] Dataset label map = {'1': 1, '0': 0}
+[2019-11-08 20:56:59,001] [    INFO] - Checkpoint dir: /root/dataset/module_in
+[2019-11-08 20:56:59,001: INFO/Worker-1] Checkpoint dir: /root/dataset/module_in
+[2019-11-08 20:56:59,828] [    INFO] - Load the best model from /root/dataset/module_in/best_model
+[2019-11-08 20:56:59,828: INFO/Worker-1] Load the best model from /root/dataset/module_in/best_model
+[2019-11-08 20:56:59,938: WARNING/Worker-1] /usr/local/lib/python2.7/dist-packages/paddle/fluid/executor.py:790: UserWarning: The current program is empty.
+  warnings.warn(error_info)
+[2019-11-08 20:57:00,748] [    INFO] - PaddleHub predict start
+[2019-11-08 20:57:02,276: INFO/MainProcess] Received task: news.tasks.Analysis[1a3c9780-2625-4f75-9f20-14dd75ca9981]
+[2019-11-08 20:57:02,639] [    INFO] - Installing ernie module
+[2019-11-08 20:57:02,639: INFO/Worker-5] Installing ernie module
+[2019-11-08 20:57:02,650] [    INFO] - PaddleHub predict finished.
+[2019-11-08 20:57:02,668] [    INFO] - Module ernie already installed in /root/.paddlehub/modules/ernie
+[2019-11-08 20:57:02,668: INFO/Worker-5] Module ernie already installed in /root/.paddlehub/modules/ernie
+[2019-11-08 20:57:02,743: INFO/MainProcess] Task news.tasks.Analysis[50607c8f-f5c5-4f07-89e9-0b683cc5ddd3] succeeded in 5.070713773s: None
