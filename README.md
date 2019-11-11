@@ -1,5 +1,7 @@
 #NLP &spider 
 
+#python3.6+
+
 #views 
 
 tensorboard --logdir $CKPT_DIR/visualization --host ${HOST_IP} --port ${PORT_NUM}

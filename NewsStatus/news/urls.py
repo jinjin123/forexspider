@@ -6,4 +6,6 @@ from news import views
 
 urlpatterns = [
     url(r'^index/$', views.index, name='news_index'),
+    url(r'^trump/$', views.trump_news, name='trump_news'),
+    url(r'^jten/$', views.jten, name='jten'),
 ]
