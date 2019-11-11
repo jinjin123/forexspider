@@ -16,32 +16,32 @@ class AibaseApi:
         self.metrics_choices = ["acc"]
 
     def load(self):
-	inputs, outputs, program = self.module.context(
-        	trainable=True, max_seq_len=128)
+        inputs, outputs, program = self.module.context(
+        trainable=True, max_seq_len=128)
 
-	reader = hub.reader.ClassifyReader(
-       	 	dataset=self.dataset,
-		vocab_path=self.module.get_vocab_path(),
+        reader = hub.reader.ClassifyReader(
+        dataset=self.dataset,
+                vocab_path=self.module.get_vocab_path(),
         	max_seq_len=128,
         	use_task_id=False)
 
-	pooled_output = outputs["pooled_output"]
-	feed_list = [
-        	inputs["input_ids"].name,
-        	inputs["position_ids"].name,
-        	inputs["segment_ids"].name,
-        	inputs["input_mask"].name,
-	]
+        pooled_output = outputs["pooled_output"]
+        feed_list = [
+                inputs["input_ids"].name,
+                inputs["position_ids"].name,
+                inputs["segment_ids"].name,
+                inputs["input_mask"].name,
+                ]
 	
-	config = hub.RunConfig(
-        	use_pyreader=False,
-        	use_cuda=False,
+        config = hub.RunConfig(
+                use_pyreader=False,
+                use_cuda=False,
         	batch_size=30,
         	enable_memory_optim=False,
         	checkpoint_dir=self.module_in,
         	strategy=hub.finetune.strategy.DefaultFinetuneStrategy())
 
-	cls_task = hub.TextClassifierTask(
+        cls_task = hub.TextClassifierTask(
         	data_reader=reader,
         	feature=pooled_output,
         	feed_list=feed_list,
@@ -49,4 +49,4 @@ class AibaseApi:
         	config=config,
         	metrics_choices=self.metrics_choices)
 
-	return cls_task
+        return cls_task

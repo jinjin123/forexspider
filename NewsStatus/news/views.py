@@ -34,3 +34,11 @@ def jten(request):
         if  row.count()  == 0:
             Jten.objects.create(content=data["content"],tag=data["tag"],exttime=data["exttime"],time=data["time"])
         return JsonResponse(rsp)
+    
+    data = []
+    today = datetime.datetime.now().strftime('%Y-%m-%d')
+    obj = Jten.objects.values("content","status","time").filter(exttime=today,status__isnull=False).order_by('-time')
+    data = [new for new in obj]
+    rsp = {'data': data, 'msg': 'success'}
+    return JsonResponse(rsp)
+

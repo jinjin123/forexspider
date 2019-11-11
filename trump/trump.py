@@ -39,6 +39,7 @@ def get_tra_res(q,fromLang='en',toLang='zh'):
         "salt" : str(salt),
         "sign" : sign,
     }
+    #print(data)
     res = requests.post(url, data=data)
     trans_result = json.loads(res.content).get('trans_result')[0].get("dst")
     return trans_result
@@ -52,8 +53,9 @@ with open("trump.json","rb") as b:
         sql="select tag from trump where tag = '%s'" % str(tmp["created_at"])
         row = cur.execute(sql)
         if row == 0:
-            trs = get_tra_res(tmp["tweet"].split("https")[0])
-            cur.execute('insert into trump (content,tag,time) values (%s,%s,%s)', (trs,str(tmp["created_at"]),(datetime.datetime.strptime(tmp["date"]+" "+tmp["time"],"%Y-%m-%d %H:%M:%S")).strftime("%Y-%m-%d %H:%M:%S")))
+            #trs = get_tra_res(tmp["tweet"].split("https")[0])
+            trs = get_tra_res(tmp["tweet"])
+            cur.execute('insert into trump (content,tag,time,exttime) values (%s,%s,%s,%s)', (trs,str(tmp["created_at"]),(datetime.datetime.strptime(tmp["date"]+" "+tmp["time"],"%Y-%m-%d %H:%M:%S")).strftime("%Y-%m-%d %H:%M:%S"),tmp["date"]))
             mq2.commit()
 
 
