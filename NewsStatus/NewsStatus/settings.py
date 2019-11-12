@@ -6,6 +6,7 @@ import pymysql
 DEBUG = False
 SERVER_IP ='192.168.50.100'
 
+"""
 djcelery.setup_loader()
 CELERYBEAT_SCHEDULER = 'djcelery.schedulers.DatabaseScheduler'
 CELERY_TASK_RESULT_EXPIRES = 1000
@@ -16,6 +17,7 @@ CELERY_IGNORE_RESULT = True
 CELERY_TIMEZONE = 'Asia/Shanghai'
 BROKER_URL = '%s' % SERVER_IP
 BROKER_TRANSPORT = 'amqp'
+"""
 #BROKER_URL = '127.0.0.1'
 #BROKER_TRANSPORT = 'redis'
 #CELERY_RESULT_BACKEND = 'redis://%s:6379/0' % SERVER_IP
@@ -27,6 +29,8 @@ SECRET_KEY = 'zej+b70@fwyqxz4cb!13-^t5kw*-#^y0n603oup^x=+r^-o0_z'
 ADMINS=()
 ALLOWED_HOSTS = ['*']
 
+#CRONTAB_COMMAND_PREFIX = 'LANG_ALL=zh_cn.UTF-8'
+CRONTAB_COMMAND_PREFIX = 'sleep 15;'
 
 # Application definition
 
@@ -38,7 +42,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'news',
-    'djcelery',
+    #'djcelery',
+    'django_crontab',
+]
+
+CRONJOBS = [
+    ('* * * * *', 'news.cron.jten_news','>>/root/project/news/logs/cron.log'),
+    ('*/30 * * * *', 'news.cron.static_news','>>/root/project/news/logs/cron.log'),
+    ('*/1 * * * *', 'news.cron.trump_news','>>/root/project/news/logs/cron.log')
 ]
 
 MIDDLEWARE = [
