@@ -1,0 +1,9 @@
+Django==1.11.26
+django-celery==3.2.1
+celery==3.1.25
+django-crontab==0.7.1
+pymysql
+gunicorn==19.7.1
+MySQL-python==1.2.5
+gevent==1.4.0
+redis==3.3.11

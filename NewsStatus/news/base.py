@@ -35,7 +35,7 @@ class AibaseApi:
 	
         config = hub.RunConfig(
                 use_pyreader=False,
-                use_cuda=False,
+                use_cuda=True,
         	batch_size=30,
         	enable_memory_optim=False,
         	checkpoint_dir=self.module_in,

@@ -3,7 +3,7 @@ import os
 import djcelery
 import pymysql
 
-DEBUG = True
+DEBUG = False
 SERVER_IP ='192.168.50.100'
 
 djcelery.setup_loader()
@@ -14,6 +14,11 @@ CELERYD_MAX_TASKS_PER_CHILD = 200
 CELERYD_TASK_TIME_LIMIT = 10 * 60 * 60
 CELERY_IGNORE_RESULT = True
 CELERY_TIMEZONE = 'Asia/Shanghai'
+BROKER_URL = '%s' % SERVER_IP
+BROKER_TRANSPORT = 'amqp'
+#BROKER_URL = '127.0.0.1'
+#BROKER_TRANSPORT = 'redis'
+#CELERY_RESULT_BACKEND = 'redis://%s:6379/0' % SERVER_IP
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -107,11 +112,11 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = False
 STATIC_URL = '/static/'
-
-STATICFILES_DIRS = (
-"%s/%s" % (BASE_DIR, "upload"),
-"%s/%s" % (BASE_DIR, "static"),
-)
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+#STATICFILES_DIRS = (
+#"%s/%s" % (BASE_DIR, "upload"),
+#"%s/%s" % (BASE_DIR, "static"),
+#)
 
 
 SESSION_COOKIE_DOMAIN = None
