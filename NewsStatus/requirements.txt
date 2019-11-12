@@ -55,7 +55,7 @@ matplotlib==2.2.4
 more-itertools==5.0.0
 moviepy==1.0.1
 MySQL-python==1.2.5
-nltk==3.4
+nltk==3.4.5
 numpy==1.16.4
 oauthlib==3.1.0
 objgraph==3.4.1
