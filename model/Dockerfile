@@ -5,7 +5,7 @@ RUN  apt-get install supervisor -y
 RUN  apt-get install cron -y
 RUN  apt-get install libmysqlclient-dev -y
 
-RUN pip install paddlehub
+RUN pip install paddlehub==1.6
 
 ADD __init__.py /usr/local/lib/python2.7/dist-packages/paddlehub/dataset/
 
