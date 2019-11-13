@@ -1,0 +1,47 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: njssvc
+  labels:
+    app: njs
+spec:
+  ports:
+    - port: 3000
+      name: http
+      protocol: "TCP"
+      targetPort: 3000
+  selector:
+    app: njs
+
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: njsdpl
+  labels:
+    app: njs
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: njs
+  template:
+    metadata:
+      labels:
+        app: njs
+    spec:
+      hostname: njs
+      containers:
+      - name: njs
+        image: localhost:32000/njs:latest
+        volumeMounts:
+        - mountPath: /usr/src/app
+          name: code
+        ports:
+          - containerPort: 3000
+            name: http
+      volumes: 
+      - name: code
+        hostPath: 
+          path: /root/forex/news

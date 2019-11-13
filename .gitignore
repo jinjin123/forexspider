@@ -1,2 +1,3 @@
 *.pyc
 NewsStatus/logs/*
+news/node_modules/*
