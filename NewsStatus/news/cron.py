@@ -4,7 +4,6 @@ from __future__ import division
 from __future__ import unicode_literals
 
 
-from NewsStatus.celery import app
 from news.models import News,Trump,Jten
 from news.base import AibaseApi
 import datetime
