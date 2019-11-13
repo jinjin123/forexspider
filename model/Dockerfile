@@ -2,6 +2,7 @@ FROM paddlepaddle/paddle:latest-gpu-cuda10.0-cudnn7
 
 RUN apt-get install vim -y
 RUN  apt-get install supervisor -y
+RUN  apt-get install cron -y
 RUN  apt-get install libmysqlclient-dev -y
 
 RUN pip install paddlehub

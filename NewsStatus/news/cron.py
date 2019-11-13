@@ -20,13 +20,13 @@ def static_news():
         today = datetime.datetime.now().strftime('%Y-%m-%d')
         obj = News.objects.values("content","status").filter(time=today,status__isnull=True)
         data = [list(new.values()) for new in obj]
-        ndex = 0
+        index = 0
         run_states = cls_task.predict(data=data)
         results = [run_state.run_results for run_state in run_states]
         for batch_result in results:
             batch_result = np.argmax(batch_result, axis=2)[0]
             for result in batch_result:
-                News.objects.filter(content=data[index][0]).update(status=int(result))
+                b = News.objects.filter(content=data[index][0]).update(status=int(result))
                 index += 1
 
 def trump_news():

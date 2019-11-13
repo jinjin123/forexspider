@@ -151,6 +151,12 @@ LOGGING = {
         }
     },
     'handlers': {
+	'django_crontab': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'logs/') + 'crontab.log',
+            'formatter': 'verbose'
+        },
         'null': {
             'level': 'DEBUG',
             'class': 'logging.NullHandler',
@@ -182,6 +188,11 @@ LOGGING = {
         },
     },
     'loggers': {
+	'django_crontab.crontab': {
+            'handlers': ['django_crontab'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
         'console': {
             'level': 'INFO',
             'filters': ['require_debug_true'],
