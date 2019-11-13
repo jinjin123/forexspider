@@ -1,0 +1,63 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: aisvc
+  labels:
+    app: ai
+spec:
+  type: NodePort
+  ports:
+    - port: 8000
+      name: http
+      protocol: "TCP"
+      targetPort: 8000
+      nodePort: 8082
+  selector:
+    app: ai
+
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aidpl
+  labels:
+    app: ai
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ai
+  template:
+    metadata:
+      labels:
+        app: ai
+    spec:
+      hostname: ai
+      containers:
+      - name: ai
+        image: localhost:32000/ai:latest
+        resources:
+          limits:
+            nvidia.com/gpu: 1
+        volumeMounts:
+        - mountPath: /root/.paddlehub
+          name: hub
+        - mountPath: /root/dataset/module_in
+          name: mod
+        - mountPath: /root/project/news
+          name: code
+        ports:
+          - containerPort: 8000
+            name: http
+      volumes: 
+      - name: hub
+        hostPath: 
+          path: /root/.paddlehub
+      - name: mod
+        hostPath: 
+          path: /root/dataset/module_in
+      - name: code
+        hostPath: 
+          path: /root/forex/NewsStatus
+
