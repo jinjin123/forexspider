@@ -40,7 +40,7 @@ def jten_off(request):
     if request.method == "POST":
         data = json.loads(request.body)
 	limit = int(data["limit"])
-	offset = int(data["limit"])
+	offset = int(data["offset"])
     	today = datetime.datetime.now().strftime('%Y-%m-%d')
     	obj = Jten.objects.values("content","status","time").filter(exttime=today,status__isnull=False).order_by('-time')[offset:(offset + limit)]
     	data = [new for new in obj]
