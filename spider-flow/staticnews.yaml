@@ -1,0 +1,51 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: snsvc
+  labels:
+    app: sn
+spec:
+  type: NodePort
+  ports:
+    - port: 8088
+      name: http
+      protocol: "TCP"
+      targetPort: 8088
+      nodePort: 8083
+  selector:
+    app: sn
+
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sndpl
+  labels:
+    app: sn
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sn
+  template:
+    metadata:
+      labels:
+        app: sn
+    spec:
+      hostname: sn
+      containers:
+      - name: sn
+        image: localhost:32000/java18:latest
+        command: ["java"]
+        args: ["-jar","/root/spider-flow.jar"]
+        volumeMounts:
+        - mountPath: /root/spider-flow.jar
+          name: jar
+        ports:
+          - containerPort: 8088
+            name: http
+      volumes: 
+      - name: jar
+        hostPath: 
+          path: /root/spider-flow.jar

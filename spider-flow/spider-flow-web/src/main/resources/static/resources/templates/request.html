@@ -1,0 +1,193 @@
+<div class="layui-tab layui-tab-fixed layui-tab-brief">
+  <ul class="layui-tab-title">
+    <li class="layui-this">基本配置</li>
+    <li>参数</li>
+    <li>Header</li>
+    <li>Body</li>
+  </ul>
+  <div class="layui-tab-content editor-form-node">
+    <div class="layui-tab-item layui-show">
+    	<form class="layui-form">
+    		<div class="layui-form-item">
+    			<label class="layui-form-label">节点名称</label>
+    			<div class="layui-input-block">
+    				<input type="text" name="value" placeholder="请输入节点名称" value="{{=d.value}}" autocomplete="off" class="layui-input">
+    			</div>
+    		</div>
+    		<div class="layui-form-item">
+    			<label class="layui-form-label">循环变量</label>
+    			<div class="layui-input-block">
+    				<input type="text" name="loopVariableName" placeholder="请输入循环变量" autocomplete="off" class="layui-input input-default" value="{{=d.data.object.loopVariableName}}">
+    			</div>
+    		</div>
+    		<div class="layui-form-item">
+    			<label class="layui-form-label">循环次数</label>
+    			<div class="layui-input-block" codemirror="loopCount" placeholder="请输入循环次数" data-value="{{=d.data.object.loopCount}}"></div>
+    		</div>
+    		<div class="layui-form-item">
+    			<label class="layui-form-label">延迟时间</label>
+    			<div class="layui-input-block">
+    				<input type="text" name="sleep" placeholder="请输入延迟时间" autocomplete="off" class="layui-input input-default" value="{{=d.data.object.sleep}}">
+    			</div>
+    		</div>
+    		<div class="layui-form-item">
+    			<label class="layui-form-label">超时时间</label>
+    			<div class="layui-input-block">
+    				<input type="text" name="timeout" placeholder="请输入超时时间" autocomplete="off" class="layui-input input-default" value="{{=d.data.object.timeout}}">
+    			</div>
+    		</div>
+    		<div class="layui-form-item">
+    			<label class="layui-form-label">URL</label>
+    			<div class="layui-input-block" codemirror="url" data-value="{{=d.data.object.url}}"></div>
+    		</div>
+    		<div class="layui-form-item">
+    			<label class="layui-form-label">页面编码</label>
+    			<div class="layui-input-block">
+    				<input type="text" name="response-charset" placeholder="请输入页面编码" autocomplete="off" class="layui-input input-default" value="{{=d.data.object['response-charset']}}">
+    			</div>
+    		</div>
+    		<div class="layui-form-item">
+	   			<label class="layui-form-label">代理</label>
+	   			<div class="layui-input-block" placeholder="host:port" codemirror="proxy" data-value="{{=d.data.object.proxy}}"></div>
+	   		</div>
+    		<div class="layui-form-item">
+    			<label class="layui-form-label">请求方法</label>
+    			<div class="layui-input-block">
+    				<select name="method">
+	    				<option value="GET" {{d.data.object.method == 'GET' ? 'selected':''}}>GET</option>
+	   					<option value="POST" {{d.data.object.method == 'POST' ? 'selected':''}}>POST</option>
+	   					<option value="PUT" {{d.data.object.method == 'PUT' ? 'selected':''}}>PUT</option>
+	   					<option value="DELETE" {{d.data.object.method == 'DELETE' ? 'selected':''}}>DELETE</option>
+	   					<option value="PATCH" {{d.data.object.method == 'PATCH' ? 'selected':''}}>PATCH</option>
+	   					<option value="HEAD" {{d.data.object.method == 'HEAD' ? 'selected':''}}>HEAD</option>
+	   					<option value="OPTIONS" {{d.data.object.method == 'OPTIONS' ? 'selected':''}}>OPTIONS</option>
+	   					<option value="TRACE" {{d.data.object.method == 'TRACE' ? 'selected':''}}>TRACE</option>
+   					</select>
+    			</div>
+    		</div>
+    		<div class="layui-form-item">
+	   			<label class="layui-form-label">跟随重定向</label>
+	   			<div class="layui-input-block">
+	   				<input type="checkbox" value="follow-redirect" lay-skin="switch" {{d.data.object['follow-redirect'] == '0' ? '' : 'checked'}}/>
+    			</div>
+	   		</div>
+	   		<div class="layui-form-item">
+	   			<label class="layui-form-label">TLS证书验证</label>
+	   			<div class="layui-input-block">
+	   				<input type="checkbox" value="tls-validate" lay-skin="switch" {{d.data.object['tls-validate'] == '0' ? '' : 'checked'}}/>
+    			</div>
+	   		</div>
+    	</form>
+    </div>
+    <div class="layui-tab-item">
+    	<form class="layui-form">
+	    	{{# layui.each(d.data.object['parameter-name'],function(index){ }}
+	    		<div class="layui-form-item layui-form-relative">
+	    			<i class="layui-icon layui-icon-close parameter-remove"></i>  
+	    			<label class="layui-form-label">参数名</label>
+	    			<div class="layui-input-block">
+	    				<input type="text" name="parameter-name" placeholder="请输入参数名" autocomplete="off" class="layui-input array" value="{{=d.data.object['parameter-name'][index]}}">
+	    			</div>
+	    		</div>
+	    		<div class="layui-form-item">
+	    			<label class="layui-form-label">参数值</label>
+	    			<div class="layui-input-block array" placeholder="请输入参数值" codemirror="parameter-value" data-value="{{=d.data.object['parameter-value'][index]}}"></div>
+	    		</div>
+	    		<hr>
+	   		{{# }) }}
+	   		<div class="layui-form-item">
+	   			<div class="layui-input-block">
+	    			<button class="layui-btn parameter-add" type="button">添加一个参数</button>
+	    		</div>
+	    	</div>
+    	</form>
+    </div>
+    <div class="layui-tab-item">
+    	<form class="layui-form">
+	    	{{# layui.each(d.data.object['header-name'],function(index){ }}
+	    		<div class="layui-form-item layui-form-relative">
+	    			<i class="layui-icon layui-icon-close header-remove"></i>  
+	    			<label class="layui-form-label">header名</label>
+	    			<div class="layui-input-block">
+	    				<input type="text" name="header-name" placeholder="请输入header名" autocomplete="off" class="layui-input array" value="{{=d.data.object['header-name'][index]}}">
+	    			</div>
+	    		</div>
+	    		<div class="layui-form-item">
+	    			<label class="layui-form-label">header值</label>
+	    			<div class="layui-input-block array" placeholder="请输入header值" codemirror="header-value" data-value="{{=d.data.object['header-value'][index]}}"></div>
+	    		</div>
+	    		<hr>
+	   		{{# }) }}
+	   		<div class="layui-form-item">
+	   			<div class="layui-input-block">
+	    			<button class="layui-btn header-add" type="button">添加一个Header</button>
+	    		</div>
+	    	</div>
+	    </form>
+    </div>
+  	
+  	<div class="layui-tab-item">
+    	<form class="layui-form">
+    		<div class="layui-form-item">
+    			<label class="layui-form-label">类型</label>
+    			<div class="layui-input-block">
+    				<select name="body-type" lay-filter="bodyType">
+	    				<option value="none" {{d.data.object['body-type'] == 'none' ? 'selected':''}}>none</option>
+	   					<option value="form-data" {{d.data.object['body-type'] == 'form-data' ? 'selected':''}}>form-data</option>
+	   					<option value="raw" {{d.data.object['body-type'] == 'raw' ? 'selected':''}}>raw</option>
+   					</select>
+    			</div>
+    		</div>
+    		<div  class="form-body-raw" {{d.data.object['body-type'] != 'raw' ? 'style="display:none;"':''}}>
+	    		<div class="layui-form-item">
+	    			<label class="layui-form-label">Content-Type</label>
+	    			<div class="layui-input-block">
+	    				<select name="body-content-type">
+		    				<option value="text/plain" {{d.data.object['body-content-type'] == 'text/plain' ? 'selected':''}}>text/plain</option>
+		   					<option value="application/json" {{d.data.object['body-content-type'] == 'application/json' ? 'selected':''}}>application/json</option>
+	   					</select>
+	    			</div>
+	    		</div>
+	    		<div class="layui-form-item">
+	    			<label class="layui-form-label">内容</label>
+	    			<div class="layui-input-block" style="height:200px;" placeholder="请输入内容" codemirror="request-body" data-value="{{=d.data.object['request-body']}}"></div>
+	    		</div>
+    		</div>
+    		<div class="form-body-form-data" {{d.data.object['body-type'] != 'form-data' ? 'style="display:none;"':''}}>
+    			{{# layui.each(d.data.object['parameter-form-name'],function(index){ }}
+    				<div class="layui-form-item layui-form-relative">
+						<i class="layui-icon layui-icon-close parameter-form-remove"></i>
+						<label class="layui-form-label">参数名</label>
+						<div class="layui-input-block">
+							<input type="text" name="parameter-form-name" placeholder="请输入参数名" value="{{=d.data.object['parameter-form-name'][index]}}" autocomplete="off" class="layui-input array">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">参数类型</label>
+						<div class="layui-input-block">
+							<select name="parameter-form-type" lay-filter="formType" class="array">
+								<option value="text" {{d.data.object['parameter-form-type'][index] == 'text' ? 'selected': '' }}">text</option>
+								<option value="file" {{d.data.object['parameter-form-type'][index] == 'file' ? 'selected': '' }}>file</option>
+							</select>
+						</div>
+					</div>
+					<div class="layui-form-item" {{d.data.object['parameter-form-type'][index] == 'file' ? '': 'style="display:none;"' }}>
+						<label class="layui-form-label">文件名</label>
+						<div class="layui-input-block array" placeholder="请输入文件名" codemirror="parameter-form-filename" data-value="{{=d.data.object['parameter-form-filename']['index']}}"></div>
+					</div>
+						<div class="layui-form-item">
+						<label class="layui-form-label">参数值</label>
+						<div class="layui-input-block array" placeholder="请输入参数值" codemirror="parameter-form-value" data-value="{{=d.data.object['parameter-form-value'][index]}}"></div>
+					</div>
+					<hr>
+    			{{# }) }}
+	    		<div class="layui-form-item">
+		   			<div class="layui-input-block">
+		    			<button class="layui-btn parameter-form-add" type="button">添加一个参数</button>
+		    		</div>
+		    	</div>
+    		</div>
+	    </form>
+    </div>
+  </div>
+</div>
