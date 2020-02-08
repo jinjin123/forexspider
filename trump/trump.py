@@ -7,6 +7,7 @@ import MySQLdb
 import hashlib
 import random
 import requests
+import time
 import twint
 
 today = datetime.datetime.now().strftime('%Y-%m-%d')
@@ -55,8 +56,15 @@ with open("trump.json","rb") as b:
         if row == 0:
             #trs = get_tra_res(tmp["tweet"].split("https")[0])
             trs = get_tra_res(tmp["tweet"])
+            #if  "pic" in trs:
+            #    break
+            #elif "https" in trs:
+            #    break
+            #else:
             cur.execute('insert into trump (content,tag,time,exttime) values (%s,%s,%s,%s)', (trs,str(tmp["created_at"]),(datetime.datetime.strptime(tmp["date"]+" "+tmp["time"],"%Y-%m-%d %H:%M:%S")).strftime("%Y-%m-%d %H:%M:%S"),tmp["date"]))
             mq2.commit()
+        #limit api
+        time.sleep(2)
 
 
 

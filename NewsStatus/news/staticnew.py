@@ -19,7 +19,7 @@ def static_news():
         cls_task = ai.load()
         data = []
         today = datetime.datetime.now().strftime('%Y-%m-%d')
-        obj = News.objects.values("content","status").filter(time=today,status__isnull=True)
+        obj = News.objects.values("content","status").filter(time__gt=today,status__isnull=True)
         data = [list(new.values()) for new in obj]
         index = 0
         run_states = cls_task.predict(data=data)
