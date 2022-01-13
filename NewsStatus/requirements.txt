@@ -65,7 +65,7 @@ paddlepaddle==1.6.0
 pandas==0.24.2
 parsel==1.5.2
 pathlib2==2.3.5
-Pillow==6.2.1
+Pillow==9.0.0
 prettytable==0.7.2
 proglog==0.1.9
 Protego==0.1.15
