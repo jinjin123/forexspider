@@ -61,7 +61,7 @@ oauthlib==3.1.0
 objgraph==3.4.1
 opencv-python==4.1.1.26
 paddlehub==1.2.1
-paddlepaddle==1.6.0
+paddlepaddle==2.4.0
 pandas==0.24.2
 parsel==1.5.2
 pathlib2==2.3.5
